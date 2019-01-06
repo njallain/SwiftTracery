@@ -10,6 +10,12 @@
 		7313D29921DEF26A00B9A135 /* SwiftTracery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7313D28F21DEF26A00B9A135 /* SwiftTracery.framework */; };
 		7313D29E21DEF26A00B9A135 /* SwiftTraceryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */; };
 		7313D2A021DEF26A00B9A135 /* SwiftTracery.h in Headers */ = {isa = PBXBuildFile; fileRef = 7313D29221DEF26A00B9A135 /* SwiftTracery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7313D2AC21DEFB6500B9A135 /* Tracery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2AB21DEFB6500B9A135 /* Tracery.swift */; };
+		7313D2B021E0F50700B9A135 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2AF21E0F50700B9A135 /* Fragment.swift */; };
+		7313D2B221E0FF5E00B9A135 /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B121E0FF5E00B9A135 /* FragmentTests.swift */; };
+		7313D2B421E1423600B9A135 /* FragmentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B321E1423600B9A135 /* FragmentParser.swift */; };
+		7313D2B621E214F100B9A135 /* FragmentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B521E214F100B9A135 /* FragmentParserTests.swift */; };
+		7313D2B821E2415D00B9A135 /* MockGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B721E2415D00B9A135 /* MockGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		7313D29821DEF26A00B9A135 /* SwiftTraceryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTraceryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTraceryTests.swift; sourceTree = "<group>"; };
 		7313D29F21DEF26A00B9A135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7313D2AB21DEFB6500B9A135 /* Tracery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracery.swift; sourceTree = "<group>"; };
+		7313D2AF21E0F50700B9A135 /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
+		7313D2B121E0FF5E00B9A135 /* FragmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentTests.swift; sourceTree = "<group>"; };
+		7313D2B321E1423600B9A135 /* FragmentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentParser.swift; sourceTree = "<group>"; };
+		7313D2B521E214F100B9A135 /* FragmentParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentParserTests.swift; sourceTree = "<group>"; };
+		7313D2B721E2415D00B9A135 /* MockGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,9 @@
 			children = (
 				7313D29221DEF26A00B9A135 /* SwiftTracery.h */,
 				7313D29321DEF26A00B9A135 /* Info.plist */,
+				7313D2AB21DEFB6500B9A135 /* Tracery.swift */,
+				7313D2AF21E0F50700B9A135 /* Fragment.swift */,
+				7313D2B321E1423600B9A135 /* FragmentParser.swift */,
 			);
 			path = SwiftTracery;
 			sourceTree = "<group>";
@@ -82,6 +97,9 @@
 			children = (
 				7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */,
 				7313D29F21DEF26A00B9A135 /* Info.plist */,
+				7313D2B121E0FF5E00B9A135 /* FragmentTests.swift */,
+				7313D2B521E214F100B9A135 /* FragmentParserTests.swift */,
+				7313D2B721E2415D00B9A135 /* MockGenerator.swift */,
 			);
 			path = SwiftTraceryTests;
 			sourceTree = "<group>";
@@ -148,6 +166,7 @@
 				TargetAttributes = {
 					7313D28E21DEF26A00B9A135 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					7313D29721DEF26A00B9A135 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7313D2B021E0F50700B9A135 /* Fragment.swift in Sources */,
+				7313D2AC21DEFB6500B9A135 /* Tracery.swift in Sources */,
+				7313D2B421E1423600B9A135 /* FragmentParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7313D2B621E214F100B9A135 /* FragmentParserTests.swift in Sources */,
 				7313D29E21DEF26A00B9A135 /* SwiftTraceryTests.swift in Sources */,
+				7313D2B221E0FF5E00B9A135 /* FragmentTests.swift in Sources */,
+				7313D2B821E2415D00B9A135 /* MockGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +366,7 @@
 		7313D2A421DEF26A00B9A135 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.bluerope.SwiftTracery;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +392,7 @@
 		7313D2A521DEF26A00B9A135 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +417,7 @@
 		7313D2A721DEF26A00B9A135 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftTraceryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +435,7 @@
 		7313D2A821DEF26A00B9A135 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftTraceryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
