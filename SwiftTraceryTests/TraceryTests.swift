@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftTracery
 
-class SwiftTraceryTests: XCTestCase {
+class TraceryTests: XCTestCase {
 
 	func testParseGrammar() {
 		do {
@@ -17,6 +17,40 @@ class SwiftTraceryTests: XCTestCase {
 			let grammar = try tracery.parse(text: grammarText)
 			let story = tracery.generate(start: "origin", grammar: grammar)
 			print(story)
+		} catch {
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testLargeGrammar() {
+		do {
+			let tracery = Tracery()
+			guard let url = Bundle(for: TraceryTests.self).url(forResource: "unknown_peoples", withExtension: "json") else {
+				XCTFail("resource not found")
+				return
+			}
+			let grammar = try tracery.parse(url: url)
+			for _ in 0..<10 {
+				print(tracery.generate(start: "origin", grammar: grammar))
+				print("")
+			}
+		} catch {
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testOtherGrammars() {
+		loadAndVerifyGrammar("hash_facade")
+	}
+	private func loadAndVerifyGrammar(_ resourceName: String) {
+		do {
+			let tracery = Tracery()
+			guard let url = Bundle(for: TraceryTests.self).url(forResource: resourceName, withExtension: "json") else {
+				XCTFail("resource not found")
+				return
+			}
+			let grammar = try tracery.parse(url: url)
+			print(tracery.generate(start: "origin", grammar: grammar))
 		} catch {
 			XCTFail("\(error.localizedDescription)")
 		}
@@ -53,3 +87,4 @@ class SwiftTraceryTests: XCTestCase {
 }
 """
 }
+

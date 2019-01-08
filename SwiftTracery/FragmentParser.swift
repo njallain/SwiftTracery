@@ -8,8 +8,13 @@
 
 import Foundation
 
-struct ParseError: Error {
-	let message: String
+public enum ParseError: Error {
+	case unmatchedTagDelimeter(String)
+	case noParameterSeparator(String)
+	case unmatchedParameterDelimiter(String)
+	case unknownModifier(String)
+	case invalidJson(String)
+	
 }
 enum FragmentParser {
 	private static let paramStartChar: Character = "["
@@ -26,8 +31,20 @@ enum FragmentParser {
 		var fragments = [Fragment]()
 		while !rest.isEmpty {
 			if let tagStartIndex = rest.firstIndex(of: fragmentChar) {
-				let pre = rest[..<tagStartIndex]
-				if !pre.isEmpty { fragments.append(String(pre)) }
+				if tagStartIndex != rest.startIndex {
+					let beforeTag = rest.index(before: tagStartIndex)
+					if rest[beforeTag] == "\\" {
+						// tag delimiter is escaped
+						let pre = rest[..<beforeTag]
+						fragments.append(String(pre) + "#")
+						let afterTag = rest.index(after: tagStartIndex)
+						rest = rest[afterTag...]
+						continue
+					} else {
+						let pre = rest[..<tagStartIndex]
+						fragments.append(String(pre))
+					}
+				}
 				let (fragment, afterTag) = try parse(tag: rest[rest.index(after: tagStartIndex)...])
 				fragments.append(fragment)
 				rest = afterTag
@@ -43,7 +60,7 @@ enum FragmentParser {
 		var paramFragments = FragmentParameters()
 		while let paramStartIndex = rest.firstIndex(of: paramStartChar) {
 			guard let paramEndIndex = rest.firstIndex(of: paramEndChar) else {
-					throw ParseError(message: "could not find ending parameter delimiter in \(rest)")
+					throw ParseError.unmatchedParameterDelimiter("\(rest)")
 			}
 			let paramBegin = rest.index(after: paramStartIndex)
 			let paramText = rest[paramBegin..<paramEndIndex]
@@ -52,7 +69,7 @@ enum FragmentParser {
 			rest = rest[rest.index(after: paramEndIndex)...]
 		}
 		guard let endIndex = rest.firstIndex(of: fragmentChar) else {
-			throw ParseError(message: "could not find ending tag delimiter in \(tag)")
+			throw ParseError.unmatchedTagDelimeter("\(tag)")
 		}
 		
 		let tagParts = rest[ ..<endIndex].split(separator: modifierChar)
@@ -68,9 +85,10 @@ enum FragmentParser {
 	}
 
 
+	
 	private static func parse(parameter: Substring) throws -> (String, Fragment) {
 		guard let nameEndIndex = parameter.firstIndex(of: paramNameChar) else {
-			throw ParseError(message: "No separator found in parameter: \(parameter)")
+			throw ParseError.noParameterSeparator("\(parameter)")
 		}
 		let name = parameter[..<nameEndIndex].trimmingCharacters(in: .whitespaces)
 		let fragment = try parse(partial: parameter[parameter.index(after: nameEndIndex)...])
@@ -94,7 +112,7 @@ enum FragmentParser {
 		case "inQuotes":
 			return ModifiedFragment.quote(fragment)
 		default:
-			throw ParseError(message: "Unknown tag modifier: \(modifier)")
+			throw ParseError.unknownModifier("\(modifier)")
 		}
 	}
 }

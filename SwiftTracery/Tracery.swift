@@ -15,16 +15,30 @@ public struct Grammar {
 public class Tracery {
 	public init() {
 	}
+	public init(randomNumberGenerator: RandomNumberGenerator) {
+		self.random = randomNumberGenerator
+	}
+	/**
+	Parses the json and returns the grammar
+	*/
 	public func parse(text: String) throws -> Grammar {
 		guard let data = text.data(using: .utf8) else {
-			throw ParseError(message: "Could not convert string to utf8 string")
+			throw ParseError.invalidJson("Could not convert string to utf8 data")
 		}
 		return try parse(data: data)
 	}
+	/**
+	Parse the json at the given url and returns the grammar
+  */
+	public func parse(url: URL) throws -> Grammar {
+		let data = try Data(contentsOf: url)
+		return try parse(data: data)
+	}
+
 	public func parse(data: Data) throws -> Grammar {
 		let jsonObj = try JSONSerialization.jsonObject(with: data, options: [])
 		guard let dictionary = jsonObj as? [String: Any] else {
-			throw ParseError(message: "Could not convert json to dictionary")
+			throw ParseError.invalidJson("Could not convert json to dictionary (json should contain a single object)")
 		}
 		return try parse(dictionary: dictionary)
 	}
@@ -36,7 +50,7 @@ public class Tracery {
 				let fragments: Array<Fragment> = try list.map { try FragmentParser.parse(text: $0) }
 				return RandomFragment(fragments: fragments)
 			} else {
-				throw ParseError(message: "Message expected either a single string or array of strings")
+				throw ParseError.invalidJson("expected either a single string or array of strings")
 			}
 		}
 		return Grammar(fragments: fragments)

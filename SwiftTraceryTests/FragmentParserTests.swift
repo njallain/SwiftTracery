@@ -22,6 +22,14 @@ class FragmentParserTests: XCTestCase {
 		XCTAssertEqual("replace", s)
 	}
 	
+	func testEscapedTagDelimeter() {
+		let fragment = parse("\\#55")
+		XCTAssertEqual("#55", fragment.generate(generator, parameters:["55": "nope"]))
+	}
+	func testEmptyEscapedTag() {
+		let fragment = parse("\\#")
+		XCTAssertEqual("#", fragment.generate(generator, parameters:["55": "nope"]))
+	}
 	func testParseTagWithParameters() {
 		let fragment = parse("#[p1:#a#][p2:#b#]testtag#")
 		let aFrag = CompositeFragment(fragments: [DynamicFragment(name: "p1"), " + ", DynamicFragment(name: "p2")])

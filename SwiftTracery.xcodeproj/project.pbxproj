@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7313D29921DEF26A00B9A135 /* SwiftTracery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7313D28F21DEF26A00B9A135 /* SwiftTracery.framework */; };
-		7313D29E21DEF26A00B9A135 /* SwiftTraceryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */; };
+		7313D29E21DEF26A00B9A135 /* TraceryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D29D21DEF26A00B9A135 /* TraceryTests.swift */; };
 		7313D2A021DEF26A00B9A135 /* SwiftTracery.h in Headers */ = {isa = PBXBuildFile; fileRef = 7313D29221DEF26A00B9A135 /* SwiftTracery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7313D2AC21DEFB6500B9A135 /* Tracery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2AB21DEFB6500B9A135 /* Tracery.swift */; };
 		7313D2B021E0F50700B9A135 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2AF21E0F50700B9A135 /* Fragment.swift */; };
@@ -16,6 +16,8 @@
 		7313D2B421E1423600B9A135 /* FragmentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B321E1423600B9A135 /* FragmentParser.swift */; };
 		7313D2B621E214F100B9A135 /* FragmentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B521E214F100B9A135 /* FragmentParserTests.swift */; };
 		7313D2B821E2415D00B9A135 /* MockGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B721E2415D00B9A135 /* MockGenerator.swift */; };
+		7313D2BC21E3FA1900B9A135 /* unknown_peoples.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */; };
+		7313D2BF21E412BD00B9A135 /* hash_facade.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2BE21E412BD00B9A135 /* hash_facade.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,7 @@
 		7313D29221DEF26A00B9A135 /* SwiftTracery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftTracery.h; sourceTree = "<group>"; };
 		7313D29321DEF26A00B9A135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7313D29821DEF26A00B9A135 /* SwiftTraceryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTraceryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTraceryTests.swift; sourceTree = "<group>"; };
+		7313D29D21DEF26A00B9A135 /* TraceryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceryTests.swift; sourceTree = "<group>"; };
 		7313D29F21DEF26A00B9A135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7313D2AB21DEFB6500B9A135 /* Tracery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracery.swift; sourceTree = "<group>"; };
 		7313D2AF21E0F50700B9A135 /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		7313D2B321E1423600B9A135 /* FragmentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentParser.swift; sourceTree = "<group>"; };
 		7313D2B521E214F100B9A135 /* FragmentParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentParserTests.swift; sourceTree = "<group>"; };
 		7313D2B721E2415D00B9A135 /* MockGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenerator.swift; sourceTree = "<group>"; };
+		7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unknown_peoples.json; sourceTree = "<group>"; };
+		7313D2BE21E412BD00B9A135 /* hash_facade.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hash_facade.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +99,23 @@
 		7313D29C21DEF26A00B9A135 /* SwiftTraceryTests */ = {
 			isa = PBXGroup;
 			children = (
-				7313D29D21DEF26A00B9A135 /* SwiftTraceryTests.swift */,
+				7313D2BD21E3FA2400B9A135 /* Samples */,
+				7313D29D21DEF26A00B9A135 /* TraceryTests.swift */,
 				7313D29F21DEF26A00B9A135 /* Info.plist */,
 				7313D2B121E0FF5E00B9A135 /* FragmentTests.swift */,
 				7313D2B521E214F100B9A135 /* FragmentParserTests.swift */,
 				7313D2B721E2415D00B9A135 /* MockGenerator.swift */,
 			);
 			path = SwiftTraceryTests;
+			sourceTree = "<group>";
+		};
+		7313D2BD21E3FA2400B9A135 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */,
+				7313D2BE21E412BD00B9A135 /* hash_facade.json */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +217,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7313D2BC21E3FA1900B9A135 /* unknown_peoples.json in Resources */,
+				7313D2BF21E412BD00B9A135 /* hash_facade.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7313D2B621E214F100B9A135 /* FragmentParserTests.swift in Sources */,
-				7313D29E21DEF26A00B9A135 /* SwiftTraceryTests.swift in Sources */,
+				7313D29E21DEF26A00B9A135 /* TraceryTests.swift in Sources */,
 				7313D2B221E0FF5E00B9A135 /* FragmentTests.swift in Sources */,
 				7313D2B821E2415D00B9A135 /* MockGenerator.swift in Sources */,
 			);

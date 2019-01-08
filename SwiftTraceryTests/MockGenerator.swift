@@ -17,3 +17,11 @@ class MockGenerator: FragmentGenerator {
 	var index = 0
 	
 }
+
+
+class MockRandomNumberGenerator: RandomNumberGenerator {
+	var nextVal = 0
+	func next<T>() -> T where T : FixedWidthInteger, T : UnsignedInteger {
+		return T(nextVal)
+	}
+}

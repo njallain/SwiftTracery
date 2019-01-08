@@ -1,0 +1,4 @@
+{"code": ["accede", "beaded", "bedded", "beefed", "cabbed", "dabbed", "decade", "deeded", "deface", "efface", "facade", "ace", "add", "baa", "bad", "bed", "bee", "cab", "cad", "cee", "dab", "dad", "dee", "ebb", "eff", "fad", "fed", "fee"],
+	"origin2": ["#color# {svg <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"800\" height=\"300\"><rect x=\"0\" y=\"0\" style=\"fill:\\##color#\" width=\"800\" height=\"300\" /></svg>}"],
+	"origin": ["#[color:#code#]origin2#"]
+}
