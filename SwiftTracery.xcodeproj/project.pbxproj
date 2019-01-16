@@ -18,6 +18,9 @@
 		7313D2B821E2415D00B9A135 /* MockGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7313D2B721E2415D00B9A135 /* MockGenerator.swift */; };
 		7313D2BC21E3FA1900B9A135 /* unknown_peoples.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */; };
 		7313D2BF21E412BD00B9A135 /* hash_facade.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2BE21E412BD00B9A135 /* hash_facade.json */; };
+		7313D2C121E6311400B9A135 /* bot_teleport.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2C021E6311400B9A135 /* bot_teleport.json */; };
+		7313D2C321E6314300B9A135 /* autoflaneur.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2C221E6314300B9A135 /* autoflaneur.json */; };
+		7313D2C521E6317100B9A135 /* foley_artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 7313D2C421E6317100B9A135 /* foley_artists.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		7313D2B721E2415D00B9A135 /* MockGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenerator.swift; sourceTree = "<group>"; };
 		7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unknown_peoples.json; sourceTree = "<group>"; };
 		7313D2BE21E412BD00B9A135 /* hash_facade.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hash_facade.json; sourceTree = "<group>"; };
+		7313D2C021E6311400B9A135 /* bot_teleport.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bot_teleport.json; sourceTree = "<group>"; };
+		7313D2C221E6314300B9A135 /* autoflaneur.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = autoflaneur.json; sourceTree = "<group>"; };
+		7313D2C421E6317100B9A135 /* foley_artists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = foley_artists.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,9 @@
 			children = (
 				7313D2BB21E3FA1900B9A135 /* unknown_peoples.json */,
 				7313D2BE21E412BD00B9A135 /* hash_facade.json */,
+				7313D2C021E6311400B9A135 /* bot_teleport.json */,
+				7313D2C221E6314300B9A135 /* autoflaneur.json */,
+				7313D2C421E6317100B9A135 /* foley_artists.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -217,7 +226,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7313D2C521E6317100B9A135 /* foley_artists.json in Resources */,
+				7313D2C121E6311400B9A135 /* bot_teleport.json in Resources */,
 				7313D2BC21E3FA1900B9A135 /* unknown_peoples.json in Resources */,
+				7313D2C321E6314300B9A135 /* autoflaneur.json in Resources */,
 				7313D2BF21E412BD00B9A135 /* hash_facade.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

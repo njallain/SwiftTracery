@@ -41,6 +41,9 @@ class TraceryTests: XCTestCase {
 	
 	func testOtherGrammars() {
 		loadAndVerifyGrammar("hash_facade")
+		loadAndVerifyGrammar("bot_teleport")
+		loadAndVerifyGrammar("autoflaneur")
+		loadAndVerifyGrammar("foley_artists")
 	}
 	private func loadAndVerifyGrammar(_ resourceName: String) {
 		do {

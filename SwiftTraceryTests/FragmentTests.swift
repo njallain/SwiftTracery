@@ -30,7 +30,11 @@ class FragmentTests: XCTestCase {
 		XCTAssertEqual("b", a.generate(generator, parameters: ["c": "d"]))
 	}
 	
-	func testParemeter() {
+	func testCompositeFragment() {
+		let f = CompositeFragment(fragments: ["test", " ", RandomFragment(fragments: ["a", "b"])])
+		XCTAssertEqual("test a", f.generate(generator, parameters: [:]))
+	}
+	func testParemeterizedFragment() {
 		let p = DynamicFragment(name: "d")
 		XCTAssertEqual("x", p.generate(generator, parameters: ["a": "y", "d": "x"]))
 	}
